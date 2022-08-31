@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="type">
+      <UniqueIdentifier>{2b577623-1eba-485f-91ca-589f717f1819}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="parse">
+      <UniqueIdentifier>{192eb52a-e8a9-437d-b882-e970a4149e01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ast">
+      <UniqueIdentifier>{d0e03e6d-d656-4a6a-8b42-ec1f59bd1fde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ir">
+      <UniqueIdentifier>{9d508b3c-6889-45a8-91dc-d436bd391813}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="config">
+      <UniqueIdentifier>{0943b1c5-e60c-404d-be07-4e90c3184c22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pass">
+      <UniqueIdentifier>{77c59648-7f3e-4194-bbe7-b6c4b8775693}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{249901e9-5eff-476d-8d75-802f0f3877c0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Token.cpp">
+      <Filter>parse</Filter>
+    </ClCompile>
+    <ClCompile Include="Parser.cpp">
+      <Filter>parse</Filter>
+    </ClCompile>
+    <ClCompile Include="Type.cpp">
+      <Filter>type</Filter>
+    </ClCompile>
+    <ClCompile Include="IntegerType.cpp">
+      <Filter>type</Filter>
+    </ClCompile>
+    <ClCompile Include="Node.cpp">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstantNode.cpp">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="VariableNode.cpp">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="BinaryOpNode.cpp">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="ReturnNode.cpp">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="FunctionNode.cpp">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="Driver.cpp">
+      <Filter>parse</Filter>
+    </ClCompile>
+    <ClCompile Include="CallFuncNode.cpp">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="Module.cpp">
+      <Filter>parse</Filter>
+    </ClCompile>
+    <ClCompile Include="Expression.cpp">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="DoubleType.cpp">
+      <Filter>type</Filter>
+    </ClCompile>
+    <ClCompile Include="IFNode.cpp">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="JumpNode.cpp">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="IRDump.cpp">
+      <Filter>ir</Filter>
+    </ClCompile>
+    <ClCompile Include="IRStore.cpp">
+      <Filter>ir</Filter>
+    </ClCompile>
+    <ClCompile Include="IRCall.cpp">
+      <Filter>ir</Filter>
+    </ClCompile>
+    <ClCompile Include="IRAlloca.cpp">
+      <Filter>ir</Filter>
+    </ClCompile>
+    <ClCompile Include="IRBinary.cpp">
+      <Filter>ir</Filter>
+    </ClCompile>
+    <ClCompile Include="IROp.cpp">
+      <Filter>ir</Filter>
+    </ClCompile>
+    <ClCompile Include="IRJump.cpp">
+      <Filter>ir</Filter>
+    </ClCompile>
+    <ClCompile Include="IRCJump.cpp">
+      <Filter>ir</Filter>
+    </ClCompile>
+    <ClCompile Include="IRBlock.cpp">
+      <Filter>ir</Filter>
+    </ClCompile>
+    <ClCompile Include="IRReturn.cpp">
+      <Filter>ir</Filter>
+    </ClCompile>
+    <ClCompile Include="VoidType.cpp">
+      <Filter>type</Filter>
+    </ClCompile>
+    <ClCompile Include="IRLabel.cpp">
+      <Filter>ir</Filter>
+    </ClCompile>
+    <ClCompile Include="WhileNode.cpp">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="BraceNode.cpp">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="BreakNode.cpp">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="ContinueNode.cpp">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="NullNode.cpp">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="TestConfig.cpp">
+      <Filter>config</Filter>
+    </ClCompile>
+    <ClCompile Include="FunctionPass.cpp">
+      <Filter>pass</Filter>
+    </ClCompile>
+    <ClCompile Include="DelRepeatLabelPass.cpp">
+      <Filter>pass</Filter>
+    </ClCompile>
+    <ClCompile Include="FixPointPass.cpp">
+      <Filter>pass</Filter>
+    </ClCompile>
+    <ClCompile Include="common.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="base.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Token.h">
+      <Filter>parse</Filter>
+    </ClInclude>
+    <ClInclude Include="Parser.h">
+      <Filter>parse</Filter>
+    </ClInclude>
+    <ClInclude Include="Type.h">
+      <Filter>type</Filter>
+    </ClInclude>
+    <ClInclude Include="IntegerType.h">
+      <Filter>type</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstantNode.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="VariableNode.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="BinaryOpNode.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="ReturnNode.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="FunctionNode.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Driver.h">
+      <Filter>parse</Filter>
+    </ClInclude>
+    <ClInclude Include="CallFuncNode.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Module.h">
+      <Filter>parse</Filter>
+    </ClInclude>
+    <ClInclude Include="Expression.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="DoubleType.h">
+      <Filter>type</Filter>
+    </ClInclude>
+    <ClInclude Include="IFNode.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="JumpNode.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="IRDump.h">
+      <Filter>ir</Filter>
+    </ClInclude>
+    <ClInclude Include="IRStore.h">
+      <Filter>ir</Filter>
+    </ClInclude>
+    <ClInclude Include="IRCall.h">
+      <Filter>ir</Filter>
+    </ClInclude>
+    <ClInclude Include="IRAlloca.h">
+      <Filter>ir</Filter>
+    </ClInclude>
+    <ClInclude Include="IRBinary.h">
+      <Filter>ir</Filter>
+    </ClInclude>
+    <ClInclude Include="IROp.h">
+      <Filter>ir</Filter>
+    </ClInclude>
+    <ClInclude Include="IRJump.h">
+      <Filter>ir</Filter>
+    </ClInclude>
+    <ClInclude Include="IRCJump.h">
+      <Filter>ir</Filter>
+    </ClInclude>
+    <ClInclude Include="IRBlock.h">
+      <Filter>ir</Filter>
+    </ClInclude>
+    <ClInclude Include="IRReturn.h">
+      <Filter>ir</Filter>
+    </ClInclude>
+    <ClInclude Include="VoidType.h">
+      <Filter>type</Filter>
+    </ClInclude>
+    <ClInclude Include="IRLabel.h">
+      <Filter>ir</Filter>
+    </ClInclude>
+    <ClInclude Include="WhileNode.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="BraceNode.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="BreakNode.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="ContinueNode.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="NullNode.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="TestConfig.h">
+      <Filter>config</Filter>
+    </ClInclude>
+    <ClInclude Include="FunctionPass.h">
+      <Filter>pass</Filter>
+    </ClInclude>
+    <ClInclude Include="DelRepeatLabelPass.h">
+      <Filter>pass</Filter>
+    </ClInclude>
+    <ClInclude Include="FixPointPass.h">
+      <Filter>pass</Filter>
+    </ClInclude>
+    <ClInclude Include="common.h">
+      <Filter>common</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
