@@ -68,13 +68,16 @@ void IRBlock::addVar(string var)
 	if (var.empty())
 		return;
 
-	if (var[0] == '%')
-	{
-		varMap[var] = var;
+	if (var[0] != '%')
 		return;
+	//是临时变量的话,%数字组成
+	if (var[0] == '%' && var.size() > 1)
+	{
+		if (var[1] >= '0' && var[1] <= '9')
+			return;
 	}
 
-	assert(varMap.find(var) == varMap.end() && "redefine var");
+	//assert(varMap.find(var) == varMap.end() && "redefine var");
 	varMap[var] = var;
 }
 
@@ -104,6 +107,14 @@ void IRBlock::CountVar()
 		{
 			IRCall* pDev = dynamic_cast<IRCall*>(pBase);
 			addVar(pDev->lhs);
+			continue;
+		}
+
+		if (nullptr != dynamic_cast<IRStore*>(pBase))
+		{
+			IRStore* pS = dynamic_cast<IRStore*>(pBase);
+			addVar(pS->getLhs());
+			addVar(pS->getRhs());
 			continue;
 		}
 
@@ -290,15 +301,16 @@ void IRBlock::CalcFixedPoint()
 
 	//获取变量名
 	fixVar.clear();
-	int point_num = 4; 
 	{
 		map<string, int> countVar;
+		int iCount = 0;
 		for (auto& it : vcEdge)
 		{
 			vector<string> s1 = it->getFixPoint();
 			if (s1.empty())
 				continue;
 			
+			iCount++;
 			for (auto& it1 : s1)
 			{
 				if (countVar.find(it1) == countVar.end())
@@ -308,20 +320,9 @@ void IRBlock::CalcFixedPoint()
 			}
 		}
 
-		vector<int>vcSort;
-		map<int, vector<string>> mapTemp;
-
 		for (auto& it : countVar)
 		{
-			mapTemp[it.second] = vector<string>();
-		}
-		for (auto& it : countVar)
-		{
-			mapTemp[it.second].push_back(it.first);
-		}
-
-		for (auto& it : countVar)
-		{
+			if (it.second == iCount)
 				fixVar[it.first] = it.first;
 		}
 	}
@@ -481,14 +482,17 @@ void IREdge::printUseAndDef()
 
 }
 
-vector<std::string> IREdge::getFixPoint()
+vector<string> IREdge::getFixPoint()
 {
 	vector<string> a;
+	if (mapIn.empty() || mapOut.empty())
+		return a;
+
 	for (auto& it : mapIn)
 	{
 		if (mapOut.find(it.first) != mapOut.end())
 			a.push_back(it.first);
 	}
-	
+
 	return a;
 }

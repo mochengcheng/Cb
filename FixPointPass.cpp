@@ -31,6 +31,8 @@ void FixPointPass::runOnFunction(IRBlock* ir)
 		cout << "fix point:" << it.first << endl;
 	}
 
+	return;
+
 	vector<unique_ptr<IRDump>>& irCode = ir->getIRCode();
 
 	int tmp_use_line = -1;

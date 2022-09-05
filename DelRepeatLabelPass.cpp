@@ -1,5 +1,7 @@
 
 #include "DelRepeatLabelPass.h"
+#include "IRBinary.h"
+#include "IRStore.h"
 
 DelRepeatLabelPass::DelRepeatLabelPass()
 {
@@ -69,6 +71,40 @@ void DelRepeatLabelPass::runOnFunction(IRBlock* ir)
 			irCode.erase(irCode.begin() + i + 1);
 			i = -1;
 			continue;
+		}
+	}
+
+	/*删除无效赋值
+	tmp = a + b
+	a = tmp
+	直接合并为
+	a = a + b;
+	*/
+	{
+		int pos;
+		for (pos = 0; pos < irCode.size(); pos++)
+		{
+			IRDump* it = (irCode[pos]).get();
+			if (nullptr != dynamic_cast<IRBinary*>(it))
+			{
+				IRBinary* pB = dynamic_cast<IRBinary*>(it);
+				if (pos == (irCode.size() - 1))
+					continue;
+
+				IRStore* pS = dynamic_cast<IRStore*>((irCode[pos + 1]).get());
+				if (nullptr == pS)
+					continue;
+
+				if (pB->getRet() == pS->getRhs())
+				{
+					pB->setRet(pS->getLhs());
+
+					irCode[pos + 1] = nullptr;
+					irCode.erase(irCode.begin() + pos + 1);
+					pos = pos - 1;
+					continue;
+				}
+			}
 		}
 	}
 }
