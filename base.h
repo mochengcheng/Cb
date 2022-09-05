@@ -25,3 +25,11 @@ using namespace std;
 #define ENDL endl
 
 #define ERRORINFO(a, b) (string(string(a)+string(b)).data())
+
+
+template<class T>
+uintptr_t PointConvertUnit(T* p)
+{
+	uintptr_t num = reinterpret_cast<uintptr_t>(p);
+	return num;
+}

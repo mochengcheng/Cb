@@ -9,6 +9,7 @@
 每个函数必须有一个入口和一个出口：
 1 入口就是第一个块，entry标签修饰
 2 增加一个结束块节点，用来标记所有的结束	，这样的话整个控制流图转化为一个输入，一个输出
+3 入口轨迹块只有出没有入，出口轨迹块只有入没有出，正常的有入和出（1-N个）
 */
 
 enum class BlockType
@@ -27,7 +28,16 @@ public:
 	void setBlockType(BlockType blockType_);
 	BlockType getBlockType();
 
+	void setPrecBlock(IRTraceBlock*p);
+	set<IRTraceBlock*>& getPrecBlock();
+
+	void setNextBlock(IRTraceBlock* p);
+	set<IRTraceBlock*>& getNextBlock();
+
 private:
 	BlockType blockType;
+
+	set<IRTraceBlock*> precBlock;  //前驱块
+	set<IRTraceBlock*> nextBlock; //后驱块
 
 };
