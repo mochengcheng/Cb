@@ -156,6 +156,9 @@
     <ClCompile Include="common.cpp">
       <Filter>common</Filter>
     </ClCompile>
+    <ClCompile Include="IRTraceBlock.cpp">
+      <Filter>ir</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="base.h">
@@ -277,6 +280,9 @@
     </ClInclude>
     <ClInclude Include="common.h">
       <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="IRTraceBlock.h">
+      <Filter>ir</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

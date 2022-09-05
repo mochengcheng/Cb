@@ -171,6 +171,7 @@
     <ClCompile Include="IROp.cpp" />
     <ClCompile Include="IRReturn.cpp" />
     <ClCompile Include="IRStore.cpp" />
+    <ClCompile Include="IRTraceBlock.cpp" />
     <ClCompile Include="JumpNode.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Module.cpp" />
@@ -214,6 +215,7 @@
     <ClInclude Include="IROp.h" />
     <ClInclude Include="IRReturn.h" />
     <ClInclude Include="IRStore.h" />
+    <ClInclude Include="IRTraceBlock.h" />
     <ClInclude Include="JumpNode.h" />
     <ClInclude Include="Module.h" />
     <ClInclude Include="Node.h" />
