@@ -58,7 +58,7 @@ void FixPointPass::runOnFunction(IRBlock* ir)
 		}
 
 		//假如优化后，声明落后于使用，进行替换
-		if (pos > tmp_use_line)
+		if (pos > tmp_use_line && pos < irCode.size())
 		{
 			unique_ptr<IRDump> p = move(irCode[pos]);
 			irCode[pos] = nullptr;
