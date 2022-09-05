@@ -290,8 +290,8 @@ void IRBlock::CalcFixedPoint()
 
 	//获取变量名
 	fixVar.clear();
+	int point_num = 4; 
 	{
-		int iCount = 0;
 		map<string, int> countVar;
 		for (auto& it : vcEdge)
 		{
@@ -299,8 +299,6 @@ void IRBlock::CalcFixedPoint()
 			if (s1.empty())
 				continue;
 			
-			iCount++;
-
 			for (auto& it1 : s1)
 			{
 				if (countVar.find(it1) == countVar.end())
@@ -310,10 +308,20 @@ void IRBlock::CalcFixedPoint()
 			}
 		}
 
-		iCount = iCount / 2;
+		vector<int>vcSort;
+		map<int, vector<string>> mapTemp;
+
 		for (auto& it : countVar)
 		{
-			if (it.second >= iCount)
+			mapTemp[it.second] = vector<string>();
+		}
+		for (auto& it : countVar)
+		{
+			mapTemp[it.second].push_back(it.first);
+		}
+
+		for (auto& it : countVar)
+		{
 				fixVar[it.first] = it.first;
 		}
 	}

@@ -22,6 +22,9 @@ void FixPointPass::runOnFunction(IRBlock* ir)
 	map<string, string>& fixVar = ir->getFixVar();
 	map<string, string>& varMap = ir->getVar();
 
+	if (fixVar.empty())
+		return;
+
 	for (auto& it : fixVar)
 	{
 		varMap.erase(it.first);
