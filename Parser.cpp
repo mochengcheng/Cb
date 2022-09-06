@@ -245,7 +245,7 @@ Token MyParser::getToken()
 	if ("=" == strCurToken)
 		return Token("=", tok_op_assign);
 	if ("<" == strCurToken)
-		return Token(">", tok_op_less);
+		return Token("<", tok_op_less);
 	if (">" == strCurToken)
 		return Token(">", tok_op_greater);
 
