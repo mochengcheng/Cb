@@ -28,7 +28,7 @@ void FixPointPass::runOnFunction(IRBlock* ir)
 	for (auto& it : fixVar)
 	{
 		varMap.erase(it.first);
-		cout << "fix point:" << it.first << endl;
+	//	cout << "fix point:" << it.first << endl;
 	}
 
 	return;

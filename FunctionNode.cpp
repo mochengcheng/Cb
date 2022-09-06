@@ -41,7 +41,23 @@ void FunctionNode::IR()
 
 string FunctionNode::dump(ostringstream& out)
 {
-	out <<endl<<endl<< "define" << SPACE;
+	{
+		map<string, string>& fix_point = ir->getFixVar();
+		if (!fix_point.empty())
+		{
+			out << "function:" << name << " fix_point:" << endl;
+			for (auto& it : fix_point)
+			{
+				out << it.first << endl;
+			}
+			out << endl;
+		}
+		else
+		{
+			out << endl << endl;
+		}
+	}
+	out << "define" << SPACE;
 
 	out<< retType->getTypeName()<< SPACE;
 
