@@ -11,7 +11,6 @@ Node::Node()
 	predNode = nullptr;
 	nodeLabel = "";
 	parentNode = nullptr;
-	tempName = "";
 }
 
 Node::~Node()
@@ -114,16 +113,6 @@ string Node::getNodeLabel()
 IRBlock* Node::getIR()
 {
 	return nullptr;
-}
-
-void Node::setTempName(string name)
-{
-	tempName = name;
-}
-
-string Node::getTempName()
-{
-	return tempName;
 }
 
 void Node::setNodeLabel(string label)

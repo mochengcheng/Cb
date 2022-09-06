@@ -23,8 +23,6 @@ public:
 
 	virtual void setParentNode(Node* p);
 
-	virtual void setTempName(string name);
-
 private:
 	string op;
 

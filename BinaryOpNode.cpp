@@ -23,18 +23,6 @@ BinaryOpNode::BinaryOpNode(string op, unique_ptr<Node> lhs, unique_ptr<Node> rhs
 string BinaryOpNode::IR(IRBlock* ir)
 {
 	{
-		if (nullptr != dynamic_cast<BinaryOpNode*>(rhs.get()))
-		{
-			string tmp = getTempName();
-			if (tmp.empty())
-			{
-				string tmp1 = Node::getSN();
-				lhs->setTempName(tmp1);
-				rhs->setTempName(tmp1);
-			}
-		}
-	}
-	{
 		string l = getNodeLabel();
 		if (!l.empty())
 		{
@@ -64,11 +52,7 @@ string BinaryOpNode::IR(IRBlock* ir)
 	}
 	else
 	{
-		//string tmp = Node::getSN();
-		string tmp =getTempName();
-		if (tmp.empty())
-			tmp = Node::getSN();
-		assert(!tmp.empty() && "tmp var name is empty.");
+		string tmp = Node::getSN();
 		unique_ptr<IRBinary> p = make_unique<IRBinary>(op, tmp, s1, s2);
 		ir->AddIRDump(move(p));
 		return tmp;
@@ -121,11 +105,4 @@ void BinaryOpNode::setParentNode(Node* p)
 	Node::setParentNode(p);
 	lhs->setParentNode(p);
 	rhs->setParentNode(p);
-}
-
-void BinaryOpNode::setTempName(string name)
-{
-	Node::setTempName(name);
-	lhs->setTempName(name);
-	rhs->setTempName(name);
 }

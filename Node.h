@@ -61,9 +61,6 @@ public:
 		nodeTag = rhs; 
 	}
 
-	virtual void setTempName(string name);
-	virtual string getTempName();
-
 private:
 	static int sn;
 
@@ -80,6 +77,4 @@ private:
 
 	//½Úµã±êÇ©
 	string nodeTag;
-
-	string tempName;
 };
